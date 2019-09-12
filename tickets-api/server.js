@@ -11,14 +11,9 @@ let Ticket = require('./ticket.model');
 app.use(cors());
 app.use(bodyParser.json());
 
-//connect mongoose
-// store credentials as enviroment variables
-const dbuser = process.env.MONGODB 
-const dbpass = process.env.MONGODBPASS
 
-// TODO - Discuss connection uri
-// Need to set mongoDB variable to the uri for your own database
-const mongoDB = `mongodb+srv://thu:mongoDB@cluster0-fhxf5.mongodb.net/test?retryWrites=true`;
+// delete mongoDB url
+//const mongoDB = ``;
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
